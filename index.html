@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>houseplant</title>
+  <!-- stop looking -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=o62nkf2TQA2fEOsqrnNCmZ7MClXzNwBxjtcHp1WEkJJC-CV4h-GRpzDXBFGo0kln6mWOUz7CYxy1y3joiUpOXEP6v3_qTD0nNbG-CmJpZ0I" charset="UTF-8"></script><style>
+    body {
+      background-color: #ebd8b7;
+    }
+
+    .card {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 576px) {
+      .card {
+        max-width: 500px;
+        margin: 100px auto;
+      }
+    }
+
+    .btn {
+      background-color: #8cb890;
+      border-color: #8cb890;
+    }
+
+    .btn:hover {
+      background-color: #70a174;
+      border-color: #70a174;
+    }
+
+    .btn:active {
+      background-color:#659769;
+      border-color: #659769;
+    }
+
+    .lead {
+      text-align: center;
+    }
+  </style>
+      <script>
+        const adjectives = ['slimy', 'wobbly', 'spiky', 'smelly', 'creepy' , 'zany' , 'boisterous'];
+        const nouns = ['toothbrush', 'toaster', 'banana', 'umbrella', 'seagull'];
+        const verbs = ['dances', 'sings', 'laughs', 'cries', 'jumps'];
+
+        function generatePhrase() {
+          const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+          const noun = nouns[Math.floor(Math.random() * nouns.length)];
+          const verb = verbs[Math.floor(Math.random() * verbs.length)];
+  
+          return `the ${adjective} ${noun} ${verb} while I cry.`;
+        }
+
+        window.onload = function() {
+          document.getElementById('phrase').textContent = generatePhrase();
+        }
+      </script>
+</head>
+  <!-- why are you even here -->
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">houseplant (-＿- )</h3>
+            <div class="container">
+              <div class="row">
+                <div class="col-6">
+                  <button class="btn btn-primary" onclick="togglePlayPause()">
+              <img src="buttons/music-1.1s-200px.png" width="20" height="20" alt="Pause">
+              <i class="bi bi-play"></i>
+            </button>
+                </div>
+                <div class="col-6">
+                  <p id="phrase"></p>
+                </div>
+
+              </div>
+            </div>            
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="nome">nickname</label>
+                <input type="text" class="form-control" id="nome" placeholder="be creative">
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" class="form-control" id="email" placeholder="you know the drill">
+              </div>
+              <div class="form-group">
+                <label for="senha">password</label>
+                <input type="password" class="form-control" id="senha" placeholder="make hackers pout">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">plant time</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="myAudio" autoplay loop>
+    <source src="media/sleepy-cat-118974.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    var myAudio = document.getElementById("myAudio");
+    function togglePlayPause() {
+  if (myAudio.paused) {
+    myAudio.play();
+    document.querySelector(".bi-play").classList.replace("bi-play", "bi-pause");
+  } else {
+    myAudio.pause();
+    document.querySelector(".bi-pause").classList.replace("bi-pause", "bi-play");
+  }
+}
+    myAudio.volume = 0.1;
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
